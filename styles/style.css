@@ -344,7 +344,6 @@
 .button__text {
   font-family: var(--accent-font-family);
   font-size: clamp(0.875rem, 0.875rem + 0vw, 0.875rem);
-  font-weight: var(--main-font-weight);
   z-index: 1;
   position: relative;
   mix-blend-mode: difference;
