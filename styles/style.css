@@ -427,7 +427,7 @@
 
 .dialog::backdrop {
   background-color: var(--dialog-bg-color);
-  opacity: 0.8;
+  opacity: 0.75;
 }
 
 .dialog__container {
