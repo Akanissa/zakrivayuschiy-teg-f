@@ -1,1 +1,1 @@
-git@github.com:Akanissa/zakrivayuschiy-teg-f.git
+git@github.com/Akanissa/zakrivayuschiy-teg-f.git
