@@ -49,7 +49,7 @@
   animation-delay: 0.06s;
 }
 
-.like-icon.is-liked .sparks{
+.like-icon.is-liked .sparks {
   animation-name: sparks-click;
   animation-duration: 0.3s;
   animation-delay: 0.3s;
@@ -81,8 +81,8 @@
   from {
     fill: none;
   }
-
-  to { 
+  
+  to {
     fill: var(--main-body-color);
   }
 }
