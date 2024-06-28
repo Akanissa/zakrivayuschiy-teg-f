@@ -309,13 +309,13 @@
       </button>
     </footer>
     <dialog id="dialog-id" class="dialog">
-      <div class="dialog__container">
-        <svg class="dialog__floppy" viewBox="0 0 39 39" xmlns="http://www.w3.org/2000/svg">
-          <use href="./svg/floppy-dialog.svg#floppy_dialog"></use>
-        </svg>
-        <h2 class="dialog-text">Вставьте дискету, чтобы продолжить</h2>
-      </div>
-      <form class="button__container">
+      <form>
+        <div class="dialog__container">
+          <svg class="dialog__floppy" viewBox="0 0 39 39" xmlns="http://www.w3.org/2000/svg">
+            <use href="./svg/floppy-dialog.svg#floppy_dialog"></use>
+          </svg>
+          <h2 class="dialog-text">Вставьте дискету, чтобы продолжить</h2>
+        </div>
         <button type="button" class="close-button" onclick="window['dialog-id'].close();"
         >
           <span class="button__text">ок</span>
