@@ -315,8 +315,9 @@
         </svg>
         <h2 class="dialog-text">Вставьте дискету, чтобы продолжить</h2>
       </div>
-      <form method="dialog" class="button-container">
-        <button type="submit" class="close-button">
+      <form class="button-container">
+        <button type="submit" class="close-button" onclick="window['dialog-id'].close();"\
+        >
           <span class="button__text">ок</span>
         </button>
       </form>
