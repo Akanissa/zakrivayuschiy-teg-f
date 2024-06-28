@@ -1,10 +1,10 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-family: var(--main-font-family);
-  font-variation-settings: "wght" var(--main-font-weight);
-  background-color: var(--bg-color);
-  color: var(--accent-color);
+  font-family: var(--main-font-family, 'sans-serif');
+  font-variation-settings: "wght" var(--main-font-weight, 400);
+  background-color: var(--bg-color, #FFF);
+  color: var(--accent-color, #000);
   background-image: var(--bg-image);
   background-size: cover;
   background-attachment: fixed;
@@ -17,13 +17,13 @@
   background-color: var(--bg-color);
   inline-size: 100%;
   max-width: 696px;
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family, 'fantasy');
   display: flex;
   flex-direction: column;
   justify-content: end;
   align-items: center;
   margin-block: 100px;
-  border: 2px solid var(--accent-color);
+  border: 2px solid var(--accent-color, #000);
   padding-block-start: clamp(120px, 10vw, 136px);
 }
 
@@ -31,6 +31,7 @@
   margin-block-end: 20px;
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   line-height: 100%;
+  text-transform: uppercase;
 }
 
 .header__subtitle {
@@ -55,7 +56,7 @@
 
 .theme-menu__button {
   position: relative;
-  background-color: var(--bg-color);
+  background-color: var(--bg-color, #FFF);
   border: transparent;
   font-size: clamp(0.875rem, 0.875rem + 0vw, 0.875rem);
   line-height: 100%;
@@ -85,7 +86,7 @@
 }
 
 .theme-menu__button:disabled::before {
-  color: var(--accent-color);
+  color: var(--accent-color, #000);
 }
 
 .theme-menu__button:hover {
@@ -107,7 +108,7 @@
   transition-duration: 0.3s;
   transition-timing-function: ease;
   block-size: 2px;
-  background-color: var(--accent-color);
+  background-color: var(--accent-color, #000);
   transform-origin: left;
   display: block;
 }
@@ -125,15 +126,15 @@
 }
 
 .content__section-card {
-  background-color: var(--bg-color);
+  background-color: var(--bg-color, #FFF);
   display: grid;
 }
 
 .content__section-card-title {
-  font-variation-settings: "wght" var(--accent-font-weight);
+  font-variation-settings: "wght" var(--accent-font-weight, 700);
   font-size: clamp(1.125rem, 1.125rem + 0vw, 1.125rem);
-  border-inline: 2px solid var(--accent-color);
-  border-block-start: 2px solid var(--accent-color);
+  border-inline: 2px solid var(--accent-color, #000);
+  border-block-start: 2px solid var(--accent-color, #000);
   padding-inline-start: 10px;
   padding-inline-end: 24px;
   padding-block: 5px;
@@ -141,7 +142,7 @@
 
 .content__image {
   position: relative;
-  border: 2px solid var(--accent-color);
+  border: 2px solid var(--accent-color, #000);
 }
 
 .content__image-print {
@@ -149,22 +150,23 @@
   top: 25px;
   right: 25px;
   opacity: 0.5;
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family), 'fantasy';
   font-size: clamp(0.875rem, 0.875rem + 0vw, 0.875rem);
   line-height: 100%;
   background-blend-mode: hard-light;
-  text-shadow:     
+  text-shadow:
     1px 0px #FFF,
     -1px 0px #FFF,
-    0px 1px #FFF, 
+    0px 1px #FFF,
     0px -1px #FFF;
   z-index: 5;
+  text-transform: uppercase;
 }
 
-@supports ((text-stroke: 1px var(--main-color)) or (-webkit-text-stroke: 1px var(--main-color))) {
+@supports ((text-stroke: 1px var(--main-color, #FFF)) or (-webkit-text-stroke: 1px var(--main-color, #FFF))) {
   .content__image-print {
-    -webkit-text-stroke: 1px var(--main-color);
-    text-stroke: 1px var(--main-color);
+    -webkit-text-stroke: 1px var(--main-color, #FFF);
+    text-stroke: 1px var(--main-color, #FFF);
     text-shadow: none;
   }
 }
@@ -234,8 +236,8 @@
 
 .content__section-card-text {
   padding: 25px;
-  border-inline: 2px solid var(--accent-color);
-  border-block-end: 2px solid var(--accent-color);
+  border-inline: 2px solid var(--accent-color, #000);
+  border-block-end: 2px solid var(--accent-color, #000);
 }
 
 .section-card-description {
@@ -263,6 +265,11 @@
   border: none;
   padding: 0;
   cursor: pointer;
+  inline-size: 39px;
+  block-size: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .card__icon-button:focus {
@@ -270,15 +277,15 @@
 }
 
 .card__icon-button:focus-visible {
-  outline: 2px solid var(--accent-color);
+  outline: 2px solid var(--accent-color, #000);
   outline-offset: 5px;
   transition-duration: 0.3s;
   transition-timing-function: ease;
 }
 
 .like-icon {
-  inline-size: 39px;
-  block-size: 36px;
+  width: inherit;
+  height: inherit;
   display: block;
 }
 
@@ -287,7 +294,7 @@
 }
 
 .contour {
- fill: var(--contour-color);
+ fill: var(--contour-color, #000);
 }
 
 .main-body {
@@ -302,21 +309,24 @@
   fill: transparent;
 }
 
-.card__like-button {
-  inline-size: 130px;
-  block-size: 38px;
-  border: 2px solid var(--accent-color);
-  background-color: transparent;
+.button {
+  border: 2px solid var(--accent-color, #000);
+  background-color: var(--bg-color, #FFF);
+  color: var(--mix-blend-color, #FFF);
   position: relative;
   cursor: pointer;
   overflow: hidden;
-  color: var(--mix-blend-color);
+}
+
+.card__like-button {
+  inline-size: 130px;
+  block-size: 38px;
 }
 
 .card__like-button::before {
   content: '';
   position: absolute;
-  background-color: var(--accent-color);
+  background-color: var(--accent-color, #000);
   display: block;
   top: 0;
   left: 0;
@@ -336,13 +346,13 @@
 }
 
 .card__like-button:focus-visible {
-  box-shadow: 2px 2px var(--accent-color);
+  box-shadow: 2px 2px var(--accent-color, #000);
   transition-duration: 0.3s;
   transition-timing-function: ease;
 }
 
 .button__text {
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family), 'fantasy';
   font-size: clamp(0.875rem, 0.875rem + 0vw, 0.875rem);
   z-index: 1;
   position: relative;
@@ -352,12 +362,6 @@
 }
 
 .button-save {
-  border: 2px solid var(--accent-color);
-  position: relative;
-  cursor: pointer;
-  overflow: hidden;
-  background-color: var(--bg-color);
-  color: var(--mix-blend-color);
   display: flex;
   gap: 8px;
   justify-content: center;
@@ -369,7 +373,7 @@
 .button-save::before {
   content: '';
   position: absolute;
-  background-color: var(--accent-color);
+  background-color: var(--accent-color, #000);
   display: block;
   top: 0;
   left: 0;
@@ -389,7 +393,7 @@
 }
 
 .button-save:focus-visible {
-  box-shadow: 2px 2px 0px 0px var(--accent-color);
+  box-shadow: 2px 2px 0px 0px var(--accent-color, #000);
   transition-duration: 0.3s;
   transition-timing-function: ease;
 }
@@ -399,16 +403,18 @@
   block-size: 21px;
   position: relative;
   z-index: 1;
-  color: var(--mix-blend-color);
+  color: var(--mix-blend-color, #FFF);
   mix-blend-mode: difference;
   display: block;
 }
 
-.dialog {
+.dialog[open] {
   max-width: 360px;
   padding: 30px;
-  background-color: var(--bg-color);
-  border: 2px solid var(--accent-color);
+  background-color: var(--bg-color, #FFF);
+  border: 2px solid var(--accent-color, #000);
+  position: fixed;
+  inset: 0;
 }
 
 .dialog:not([open]) {
@@ -417,7 +423,7 @@
 }
 
 .dialog::backdrop {
-  background-color: var(--dialog-bg-color);
+  background-color: var(--dialog-bg-color, #000);
   opacity: 0.75;
 }
 
@@ -436,18 +442,18 @@
 .dialog__floppy {
   inline-size: 78px;
   block-size: 39px;
-  color: var(--mix-blend-color);
+  color: var(--mix-blend-color, #FFF);
   mix-blend-mode: difference;
   position: relative;
   z-index: 1;
 }
 
 .dialog-text {
-  font-family: var(--accent-font-family);
-  font-weight: var(--main-font-weight);
+  font-family: var(--accent-font-family), 'fantasy';
+  font-weight: var(--main-font-weight, 400);
   font-size: 14px;
   line-height: 21px;
-  color: var(--mix-blend-color);
+  color: var(--mix-blend-color, #FFF);
   mix-blend-mode: difference;
   position: relative;
   z-index: 1;
@@ -461,19 +467,13 @@
 .close-button {
   padding-block: 10px;
   inline-size: 100%;
-  border: 2px solid var(--accent-color);
-  position: relative;
-  cursor: pointer;
-  overflow: hidden;
-  background-color: var(--bg-color);
-  color: var(--mix-blend-color);
   text-transform: uppercase;
 }
 
 .close-button::before {
   content: '';
   position: absolute;
-  background-color: var(--accent-color);
+  background-color: var(--accent-color, #000);
   display: block;
   top: 0;
   left: 0;
@@ -493,7 +493,7 @@
 }
 
 .close-button:focus-visible {
-  box-shadow: 2px 2px 0px 0px var(--accent-color);
+  box-shadow: 2px 2px 0px 0px var(--accent-color, #000);
   transition-duration: 0.3s;
   transition-timing-function: ease;
 }
@@ -506,8 +506,8 @@
   .content__image-print {
     right: 13px;
   }
-  
-  .footer__button {
+
+  .button-save {
     display: grid;
     gap: 8px;
     justify-items: center;
@@ -521,5 +521,6 @@
 
   .dialog {
     max-width: 341px;
+    padding-inline: 42px;
   }
 }

@@ -1,6 +1,6 @@
 :root {
-  --main-font-family: 'Inter-Variable', sans-serif;
-  --accent-font-family: 'PressStart2P-Regular';
+  --main-font-family: 'Inter-Variable', 'sans-serif';
+  --accent-font-family: 'PressStart2P-Regular', 'fantasy';
   --main-font-weight: 400;
   --accent-font-weight: 700;
   --bg-color: #FFF;
