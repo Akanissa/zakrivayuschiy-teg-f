@@ -278,7 +278,6 @@
 
 .card__icon-button:focus-visible {
   outline: 2px solid var(--accent-color, #000);
-  outline-offset: 5px;
   transition-duration: 0.3s;
   transition-timing-function: ease;
 }
